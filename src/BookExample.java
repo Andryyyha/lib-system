@@ -6,23 +6,24 @@ import java.util.ArrayList;
 public class BookExample {
     private long id;
     private String title;
+    private ArrayList<Author> Authors = new ArrayList<Author>();//Е Б А Н И Н А
     private int yearOfPublishment;
     private int pages;
-    private String publisher;
 
     public BookExample()
     {
 
     }
 
-    public BookExample(long id, String title, ArrayList<Author> Authors, int yearOfPublishment, int pages, String publisher)
+    public BookExample(long id, String title, ArrayList<Author> Authors, int yearOfPublishment, int pages)
     {
         this.id = id;
         this.title = title;
+        this.Authors = Authors;
         this.yearOfPublishment = yearOfPublishment;
         this.pages = pages;
-        this.publisher = publisher;
     }
+
     public long getId()
     {
         return id;
@@ -43,6 +44,16 @@ public class BookExample {
         this.title = title;
     }
 
+    public ArrayList<Author> getAuthors()
+    {
+        return Authors;
+    }
+
+    public void setAuthors(ArrayList<Author> Authors)
+    {
+        this.Authors = Authors;
+    }
+
     public int getYearOfPublishment()
     {
         return yearOfPublishment;
@@ -61,13 +72,5 @@ public class BookExample {
     public void setPages(int pages)
     {
         this.pages = pages;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
     }
 }
