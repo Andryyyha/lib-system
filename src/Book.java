@@ -9,14 +9,14 @@ public class Book {
     private long id;
     private String title;
     private int pages;
-    private ArrayList<String> Authors = new ArrayList<String>(); //вот тута я включил аутиста и хз правильно ли это
+    private ArrayList<Author> Authors = new ArrayList<Author>(); //вот тута я включил аутиста и хз правильно ли это
 
     public Book()
     {
 
     }
 
-    public Book(long id, String title, int pages, ArrayList<String> Authros)
+    public Book(long id, String title, int pages, ArrayList<Author> Authros)
     {
        this.id = id;
        this.title = title;
@@ -54,12 +54,12 @@ public class Book {
         this.pages = pages;
     }
 
-    public ArrayList<String> getAuthors()//после этого вообще дичь
+    public ArrayList<Author> getAuthors()//после этого вообще дичь
     {
         return Authors;
     }
 
-    public void setAuthors(ArrayList<String> Authors)
+    public void setAuthors(ArrayList<Author> Authors)
     {
         this.Authors = Authors;
     }
