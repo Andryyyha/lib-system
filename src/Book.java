@@ -8,59 +8,36 @@ import java.util.SplittableRandom;
 public class Book {
     private long id;
     private String title;
-    private int pages;
-    private ArrayList<Author> Authors = new ArrayList<Author>(); //вот тута я включил аутиста и хз правильно ли это
 
-    public Book()
-    {
-
+    public Book() {
     }
 
-    public Book(long id, String title, int pages, ArrayList<Author> Authros)
-    {
-       this.id = id;
-       this.title = title;
-       this.pages = pages;
-       this.Authors = Authros;
-    }
-
-    public long getId()
-    {
-        return id;
-    }
-
-    public void setId(long id)
-    {
-        this.id = id;
-    }
-
-    public String getTitle()
-    {
-        return title;
-    }
-
-    public void setTitle(String title)
-    {
+    public Book(String title) {
         this.title = title;
     }
 
-    public int getPages()
-    {
-        return pages;
+    public Book(long id) {
+        this.id = id;
     }
 
-    public void  setPages(int pages)
-    {
-        this.pages = pages;
+    public Book(String title, long id) {
+        this.title = title;
+        this.id = id;
     }
 
-    public ArrayList<Author> getAuthors()//после этого вообще дичь
-    {
-        return Authors;
+    public long getId() {
+        return id;
     }
 
-    public void setAuthors(ArrayList<Author> Authors)
-    {
-        this.Authors = Authors;
+    public String getTitle() {
+        return title;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

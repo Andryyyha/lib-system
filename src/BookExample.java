@@ -8,20 +8,21 @@ public class BookExample {
     private String title;
     private int yearOfPublishment;
     private int pages;
+    private String publisher;
 
     public BookExample()
     {
 
     }
 
-    public BookExample(long id, String title, ArrayList<Author> Authors, int yearOfPublishment, int pages)
+    public BookExample(long id, String title, ArrayList<Author> Authors, int yearOfPublishment, int pages, String publisher)
     {
         this.id = id;
         this.title = title;
         this.yearOfPublishment = yearOfPublishment;
         this.pages = pages;
+        this.publisher = publisher;
     }
-
     public long getId()
     {
         return id;
@@ -60,5 +61,13 @@ public class BookExample {
     public void setPages(int pages)
     {
         this.pages = pages;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 }
