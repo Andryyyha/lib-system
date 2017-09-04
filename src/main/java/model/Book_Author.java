@@ -1,4 +1,10 @@
+package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "BOOK_AUTHOR")
 public class Book_Author {
     private long id_book;
     private long id_author;
@@ -26,5 +32,12 @@ public class Book_Author {
     public void setId_book(long id_book) {
         this.id_book = id_book;
     }
-}
 
+    @Override
+    public String toString() {
+        return "Book_Author{" +
+                "id_book=" + id_book +
+                ", id_author=" + id_author +
+                '}';
+    }
+}
