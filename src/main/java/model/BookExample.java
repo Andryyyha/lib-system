@@ -9,8 +9,7 @@ import java.util.ArrayList;
 @Table(name = "BOOK_EXAMPLE")
 public class BookExample {
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
     private String title;
     private int yearOfPublishment;
@@ -18,21 +17,21 @@ public class BookExample {
     private String publisher;
     @OneToOne
     @JoinColumn(name = "book_id")
-    private long id_book;
+    private long bookId;
 
     public BookExample()
     {
 
     }
 
-    public BookExample(long id, String title, ArrayList<Author> Authors, int yearOfPublishment, int pages, String publisher, long id_book)
+    public BookExample(long id, String title, ArrayList<Author> Authors, int yearOfPublishment, int pages, String publisher, long bookId)
     {
         this.id = id;
         this.title = title;
         this.yearOfPublishment = yearOfPublishment;
         this.pages = pages;
         this.publisher = publisher;
-        this.id_book = id_book;
+        this.bookId = bookId;
     }
 
     public long getId()
@@ -83,14 +82,12 @@ public class BookExample {
         this.publisher = publisher;
     }
 
-    @OneToOne
-    @JoinColumn(name = "id_book", referencedColumnName = "id")
-    public long getId_book() {
-        return id_book;
+    public long getBookId() {
+        return bookId;
     }
 
-    public void setId_book(long id_book) {
-        this.id_book = id_book;
+    public void setBookId(long bookId) {
+        this.bookId = bookId;
     }
 
     @Override
@@ -101,7 +98,7 @@ public class BookExample {
                 ", yearOfPublishment=" + yearOfPublishment +
                 ", pages=" + pages +
                 ", publisher='" + publisher + '\'' +
-                ", id_book=" + id_book +
+                ", id_book=" + bookId +
                 '}';
     }
 }

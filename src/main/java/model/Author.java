@@ -10,25 +10,24 @@ public class Author {
     private String name;
 
     @Id
-    @Column(name = "id", nullable = false, length = 255)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_author")
     private long id;
     @ManyToOne
     @JoinColumn
-    private List<Book> booksByAuthor;
+    private List<Book> books;
 
     public Author()
     {
 
     }
 
-    public Author(String name, long id, List<Book> booksByAuthor)
+    public Author(String name, long id, List<Book> books)
     {
         this.name = name;
         this.id = id;
-        this.booksByAuthor = booksByAuthor;
+        this.books = books;
     }
 
     public long getId()
@@ -51,12 +50,12 @@ public class Author {
         this.name = name;
     }
 
-    public List<Book> getBooksByAuthor() {
-        return booksByAuthor;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setBooksByAuthor(List<Book> booksByAuthor) {
-        this.booksByAuthor = booksByAuthor;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     @Override
@@ -64,7 +63,7 @@ public class Author {
         return "Author{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
-                ", booksByAuthor=" + booksByAuthor +
+                ", books=" + books +
                 '}';
     }
 }

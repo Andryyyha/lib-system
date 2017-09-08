@@ -8,8 +8,7 @@ import java.util.List;
 @Table(name = "BOOK")
 public class Book {
     @Id
-    @Column(name = "name")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     @OneToOne
     @JoinColumn(name = "id_book")
     private long id;

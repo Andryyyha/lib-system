@@ -6,38 +6,30 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "BOOK_AUTHOR")
 public class Book_Author {
-    private long id_book;
-    private long id_author;
+    private long bookId;
+    private long authorId;
 
-    public Book_Author() {
+    public long getBookId() {
+        return bookId;
     }
 
-    public Book_Author(long id_book, long id_author) {
-        this.id_book = id_book;
-        this.id_author = id_author;
+    public void setBookId(long bookId) {
+        this.bookId = bookId;
     }
 
-    public long getId_author() {
-        return id_author;
+    public long getAuthorId() {
+        return authorId;
     }
 
-    public long getId_book() {
-        return id_book;
-    }
-
-    public void setId_author(long id_author) {
-        this.id_author = id_author;
-    }
-
-    public void setId_book(long id_book) {
-        this.id_book = id_book;
+    public void setAuthorId(long authorId) {
+        this.authorId = authorId;
     }
 
     @Override
     public String toString() {
         return "Book_Author{" +
-                "id_book=" + id_book +
-                ", id_author=" + id_author +
+                "bookId=" + bookId +
+                ", authorId=" + authorId +
                 '}';
     }
 }
