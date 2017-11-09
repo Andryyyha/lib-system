@@ -17,6 +17,11 @@ public class Book {
     @JoinTable(name = "BOOK_AUTHOR", joinColumns = {@JoinColumn(name = "id_book")}, inverseJoinColumns = {@JoinColumn(name = "id_author")})
     private List<Author> authors;
 
+    @OneToOne
+    @JoinTable(name = "BookExample")
+    @JoinColumn(name = "id_book")
+    private long bookId;
+
     public Book() {
     }
 
