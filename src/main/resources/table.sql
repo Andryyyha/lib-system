@@ -3,7 +3,7 @@ CREATE TABLE "Author" (
 	"name" varchar NOT NULL,
 	CONSTRAINT Author_pk PRIMARY KEY ("id")
 ) WITH (
-  OIDS=FALSE
+OIDS=FALSE
 );
 
 
@@ -13,17 +13,16 @@ CREATE TABLE "Book" (
 	"title" varchar NOT NULL,
 	CONSTRAINT Book_pk PRIMARY KEY ("id")
 ) WITH (
-  OIDS=FALSE
+OIDS=FALSE
 );
 
 
 
 CREATE TABLE "Book_Author" (
-	"id_book" integer NOT NULL,
-	"id_author" integer NOT NULL,
-	CONSTRAINT Book_Author_pk PRIMARY KEY ("id_book")
+	"id_book" integer NOT NULL UNIQUE,
+	"id_author" integer NOT NULL UNIQUE
 ) WITH (
-  OIDS=FALSE
+OIDS=FALSE
 );
 
 
@@ -34,7 +33,7 @@ CREATE TABLE "BookExample" (
 	"id_book" integer NOT NULL,
 	CONSTRAINT BookExample_pk PRIMARY KEY ("id","id_book")
 ) WITH (
-  OIDS=FALSE
+OIDS=FALSE
 );
 
 
@@ -45,4 +44,3 @@ ALTER TABLE "Book" ADD CONSTRAINT "Book_fk0" FOREIGN KEY ("id") REFERENCES "Book
 
 
 ALTER TABLE "BookExample" ADD CONSTRAINT "BookExample_fk0" FOREIGN KEY ("id_book") REFERENCES "Book"("id");
-

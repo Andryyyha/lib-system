@@ -1,11 +1,12 @@
 package com.andryyyha.libsystem.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "AUTHOR")
-public class Author {
+public class Author implements Serializable {
 
     @Column(name = "name")
     private String name;

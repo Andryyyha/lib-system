@@ -1,11 +1,12 @@
 package com.andryyyha.libsystem.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "BOOK")
-public class Book {
+public class Book implements Serializable {
     @Id
     @GeneratedValue
     private long id;
@@ -19,7 +20,7 @@ public class Book {
 
 
     @OneToMany
-    @JoinTable(name = "BookExample", joinColumns = @JoinColumn(name = "id_book"))
+    @JoinColumn(name = "id_book")
     private List<BookExample> copies;
 
     public Book() {

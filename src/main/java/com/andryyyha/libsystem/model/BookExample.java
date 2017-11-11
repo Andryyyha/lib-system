@@ -2,11 +2,12 @@ package com.andryyyha.libsystem.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Entity
 @Table(name = "BOOK_EXAMPLE")
-public class BookExample {
+public class BookExample implements Serializable {
 
     @Id
     @GeneratedValue
